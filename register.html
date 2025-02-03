@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneakers thrift</title>
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">
+                <img src="">
+                <span class="sneakers">Sneakers</span> <span class="thrift">Thrift</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="product.html" class="nav-link">Product</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <!-- Profile Icon only visible on large screens -->
+                <li class="nav-item profile-item"><a href="register.html" class="nav-link"><i class="fas fa-user"></i></a></li>
+            </ul>
+            <div class="nav-icons">
+                <!-- Search Icon -->
+                <a href="#" class="nav-icon search-icon">
+                    <i class="fas fa-search"></i>
+                </a>
+                <!-- Shopping Cart Icon -->
+                <a href="#" class="nav-icon cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+                <a href="register.html" class="nav-icon fa-user">
+                    <i class="fas fa-user"></i></a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <form action="action_page.php">
+          <h1 style="text-align: center; font-size: 28px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">REGISTER</h1><b><br><br>
+          <label for="name">Full Name</label><br><br>
+          <input type="text" id="name" name="name" ><br><br>
+      
+          <label for="email">Email</label><br><br>
+          <input type="email" id="email" name="email"><br><br>
+
+          <label for="number">Number</label><br><br>
+          <input type="number" id="number" name="number"><br><br>
+      
+          <label for="Password">password</label><br><br>
+          <input type="password" id="password" name="Password"><br><br><br><br><br>
+      
+          <input type="submit" value="register"> <br><br>already have an account,<a href="login.html">login</a>
+      
+        </form>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+        
+    </script>
+
+</body>
+
+</html>

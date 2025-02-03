@@ -1,0 +1,399 @@
+/* Reset all the designs */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Styling for the header */
+.header {
+    border-bottom: 1px solid #E2E8F0;
+    background-color: #222;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.5rem;
+    position: relative; /* Make sure the navbar is the reference for absolute positioning */
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: left;
+}
+
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.nav-link:hover {
+    color: red;
+}
+
+/* Styling for the logo */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.nav-logo .logo-image {
+    height: 3rem;
+    width: auto;
+    margin-right: 10px;
+}
+
+.nav-logo .sneakers {
+    color: #fff;
+}
+
+.nav-logo .thrift {
+    color: #ff0000; /* Red color for Thrift */
+}
+
+/* Styling for nav icons (cart, profile, search) */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-icon i {
+    font-size: 2rem;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.nav-icon:hover i {
+    transform: scale(1.1);
+}
+
+/* Profile icon visibility in large screens */
+.profile-item {
+    display: none; /* Ensure the profile icon is inline with other icons */
+}
+
+@media only screen and (max-width: 768px) {
+    /* Make nav-menu hidden by default */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;  /* Links stack vertically */
+        background-color: #222;
+        width: 100%;
+        text-align: left;  /* Links align left */
+        transition: 0.2s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        padding-top: 7rem;
+    }
+    
+
+    /* Style for links inside the nav menu */
+    .nav-link {
+        color: #fff;
+        padding: 1rem 2rem;
+        font-size: 2rem;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        right: 1rem;
+        position: absolute;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Close Button (X) for nav menu */
+    .hamburger .bar {
+        background-color: red; /* Red color for X */
+    }
+
+    .nav-icons {
+        display: flex; /* Hide the nav icons on mobile */
+        gap: 1rem;
+        position: absolute;
+        right: 4.9rem;
+    }
+
+    /* Align nav links to the left */
+    .nav-links {
+        margin-bottom: auto; /* Create space above the profile icon */
+    }
+
+    /* Reduce margin between nav items */
+    .nav-item {
+        text-align: left;
+        padding: 35px;/* Add some space between items vertically */
+    }
+
+    /* Profile icon position on mobile */
+    .profile-item {
+        display: block;
+        margin-top: auto;
+        margin-left: 2rem;
+    }
+    .nav-icon.fa-user {
+        display: none;
+    }
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 80%; /* Full width */
+    padding: 0px;
+    border: none;
+    border-bottom: 2px solid #ccc; /* Bottom border only */
+    border-radius: 0; /* Remove rounded corners */
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background: transparent; /* Optional: Makes background transparent */
+    outline: none; /* Removes default focus outline */
+  }
+  input[type=email], select, textarea {
+    width: 80%; /* Full width */
+    padding: 0px;
+    border: none;
+    border-bottom: 2px solid #ccc; /* Bottom border only */
+    border-radius: 0; /* Remove rounded corners */
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background: transparent; /* Optional: Makes background transparent */
+    outline: none; /* Removes default focus outline */
+  }
+  input[type=number], select, textarea {
+    width: 80%; /* Full width */
+    padding: 0px;
+    border: none;
+    border-bottom: 2px solid #ccc; /* Bottom border only */
+    border-radius: 0; /* Remove rounded corners */
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background: transparent; /* Optional: Makes background transparent */
+    outline: none; /* Removes default focus outline */
+  }
+  input[type=password], textarea {
+    width: 80%; /* Full width */
+    padding: 0px;
+    border: none;
+    border-bottom: 2px solid #ccc; /* Bottom border only */
+    border-radius: 0; /* Remove rounded corners */
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background: transparent; /* Optional: Makes background transparent */
+    outline: none; /* Removes default focus outline */
+  }
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: black;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 50%;
+    text-align: center;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: rgb(241, 96, 96);
+  }
+  
+  /* Add a background color and some padding around the form */
+  .container {
+    border-radius: 5px;
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  label{
+    font-size: 18px;
+  }
+
+ /* About Section */
+.about-section {
+    padding: 20px 20px;
+    background-color: #fff;
+    margin-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-section h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.about-section h2 {
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+/* Footer Styles */
+.footer {
+    background-color: black;
+    color: #fff;
+    padding: 0px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.footer-links ul {
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    list-style-type: none;
+}
+
+.footer-links a {
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: red;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social .social-icon {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.footer-social .social-icon:hover {
+    color: red;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links ul {
+        align-items: center;
+    }
+
+    .footer-social {
+        margin-top: 10px;
+        gap: 15px;
+    }
+
+    .footer-social .social-icon {
+        font-size: 20px;
+    }
+}
+
+
+.user-name {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    margin-top: 5px;
+}
